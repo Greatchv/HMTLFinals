@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style> 
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">CHV</a>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" data-target="home">Home</a></li>
+            <li><a href="#" data-target="SDG">SDG</a></li>
+            <li><a href="#" data-target="achievements">Achievements</a></li>
+            <li><a href="#" data-target="skills">Skills</a></li>
+            <li><a href="#" data-target="projects">Projects</a></li>
+            <li><a href="#" data-target="contacts">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="home active">
+    <div class="home-img">
+        <img src="me.jpg" alt="Profile Picture">
+    </div>
+    <div class="home-content">
+        <h1>Hi, I'm Chariz</h1>
+        <p>In this portfolio, I will present my achievements, skills, projects, and advocacy for the SDG I chose.</p>
+    </div>
+</section>
+
+<section id="SDG">
+    <h2>No Poverty</h2>
+    <p>Poverty remains one of the most important concerns confronting the world community. Achieving-Sustainable Development Goal 1: No Poverty is crucial to creating a just and equitable world. Poverty prevents millions of people access to basic necessities including food, shelter, education, and healthcare. It exacerbates inequality, stifles economic growth, and locks families in cycles of poverty. By eliminating poverty, we ensure that everyone, regardless of origin, can live a decent life and contribute to society. </p>
+</section>
+
+<section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+        <li>Graduated with honors 🎖 (2024)</li>
+        <li>Volleyball Girls-Secondary Champion 🎖</li>
+        <li>SAKTO San Jose Chapter - Secretary</li>
+        <li>Festival of Talents Sub Office - Champion 🎖</li>
+    </ul>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Public Speaking</li>
+        <li>Working Under Pressure</li>
+        <li>Time Management</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <ul style="list-style: none; padding: 0; display: flex; gap: 10px; justify-content: center;">
+        <li><img src="lnk.jpg" alt="Project 1"></li>
+        <li><img src="poverty.jpg" alt="Project 2"></li>
+        <li><img src="sakto.jpg" alt="Project 2"></li>
+    </ul>
+</section>
+
+<section id="contacts">
+    <h2>Contact</h2>
+    <ul>
+        <li>Contact Number: 09466131745</li>
+        <li>Email: charizmaemago944@gmail.com</li>
+    </ul>
+</section>
+
+<script>
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const target = link.getAttribute('data-target');
+
+            sections.forEach(section => {
+                if (section.id === target) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
